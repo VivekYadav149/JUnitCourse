@@ -30,4 +30,29 @@ public class StringHelperTest {
 		assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
 	}
 	
+
+	// Are first and last 2 characters are same?
+	// ABCD => false, ABAB => true, AB => true, A => false
+
+	@Test
+	public void areFirstAndLast2CharactersSame_BasicNegativeScenario() {
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+	}
+	
+	@Test
+	public void areFirstAndLast2CharactersSame_BasicPositiveScenario() {
+		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+	}
+	
+	
+	@Test
+	public void areFirstAndLast2CharactersSame_With2Characters() {
+		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("AB"));
+	}
+	
+	@Test
+	public void areFirstAndLast2CharactersSame_WithSingleCharacter() {
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("A"));
+	}
+	
 }
