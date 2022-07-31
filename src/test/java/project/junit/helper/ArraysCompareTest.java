@@ -16,7 +16,8 @@ public class ArraysCompareTest {
 		assertArrayEquals(expected, numbers);
 	}
 
-	// Testing Exceptions 
+//  Testing Exceptions
+	
 //	@Test()
 //	public void testArraySort_NullArray() {
 //		int[] numbers = null;
@@ -32,4 +33,16 @@ public class ArraysCompareTest {
 		Arrays.sort(numbers);
 	}
 	
+	
+//	Testing Performance
+	
+	@Test(timeout=100)
+	public void testSort_Performance(){
+		int array[] = {12,23,4};
+		for(int i=1;i<=1000000;i++)
+		{
+			array[0] = i;
+			Arrays.sort(array);
+		}
+	}
 }
